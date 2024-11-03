@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% block section %}
+
+
+    <h1>Login Page</h1>
+    {% if msg %}
+    <h3>{{msg}}</h3>
+    {% endif %}
+
+    <form action="/login-user" method="post">
+        {% csrf_token %} 
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit">
+      
+    </form>
+
+    {% endblock section %}
+</body>
+</html>

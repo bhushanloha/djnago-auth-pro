@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block section %}
+
+    <h1>Profile Page</h1>
+
+    <form action="/save-user" method="post">
+        {% csrf_token %} 
+        <input type="number" name="age" placeholder="Age"><br>
+        <input type="number" name="contact" placeholder="contact"><br>
+        <input type="submit"><br>
+      
+    </form>
+
+    {% endblock section %}
+</body>
+</html>
